@@ -143,8 +143,17 @@ def main():
                     except ValueError:
                         pass
             time.sleep(7) # Allow batched OTLP spans to reach Jaeger.
-            traces=httpx.get("http://localhost:16686/api/traces",params={
-                "service":"observable-agent","limit":200,"lookback":"1h"},timeout=30).json()["data"]
+            # Jaeger 2.23 removed the legacy search route; retrieve known trace IDs
+            # from application logs through its documented trace-by-ID endpoint.
+            calls=[e for e in entries if e.get("event")=="llm_call" and e.get("trace_id")]
+            failures=[e for e in entries if e.get("event")=="llm_error" and e.get("trace_id")]
+            assert calls and failures, "Missing successful/failed LLM log events"
+            picked=[max(calls,key=lambda e:e.get("llm_ms",0)),failures[-1]]
+            traces=[]
+            for event in picked:
+                response=httpx.get("http://localhost:16686/api/traces/"+event["trace_id"],timeout=30)
+                response.raise_for_status()
+                traces.extend(response.json()["data"])
             correlated={e.get("trace_id"):e for e in entries if e.get("trace_id")}
             candidates=[t for t in traces if t["traceID"] in correlated and
                 any(s["operationName"].startswith("chat ") for s in t["spans"])]
