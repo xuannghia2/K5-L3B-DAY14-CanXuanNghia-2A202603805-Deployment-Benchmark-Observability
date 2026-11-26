@@ -1,0 +1,73 @@
+name: Lab verification
+on:
+  push:
+    paths-ignore:
+      - 'reports/**'
+      - 'benchmark-results/**'
+      - 'screenshots/**'
+      - '06-lab-complete/benchmark-observability/develop/reports/**'
+      - '*.md'
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  production:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r 06-lab-complete/requirements.txt -r 06-lab-complete/benchmark-observability/develop/requirements.txt pyyaml pytest playwright
+      - name: Redis for integration tests
+        run: docker run -d --name integration-redis -p 6379:6379 redis:7-alpine
+      - name: Integration tests
+        env:
+          REDIS_URL: redis://127.0.0.1:6379/15
+        run: |
+          mkdir -p reports
+          set -o pipefail
+          pytest tests -v | tee reports/integration-tests.txt
+      - name: Unmodified production readiness checker
+        working-directory: 06-lab-complete
+        run: |
+          set -o pipefail
+          python check_production_ready.py | tee ../reports/production-readiness-linux.txt
+      - name: Eval quality gate (85%, no regressions)
+        working-directory: 06-lab-complete/benchmark-observability/develop
+        run: |
+          AGENT_VERSION=v2 MOCK_ERROR_RATE=0 MOCK_SLOW_RATE=0 python app.py > /tmp/eval-agent.log 2>&1 &
+          trap 'kill $!' EXIT
+          for i in {1..30}; do curl -fsS localhost:8000/health && break; sleep 1; done
+          python eval/run_eval.py --url http://localhost:8000 --min-accuracy 0.85 --baseline ../../../reports/eval_v2.json --out ../../../reports/eval_ci.json
+      - name: Save verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-evidence
+          path: reports/
+  observability:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install httpx playwright
+      - run: playwright install --with-deps chromium
+      - name: Docker exercises and observability experiments
+        run: python scripts/run_docker_lab.py
+      - name: Save measured evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: docker-observability-evidence
+          path: |
+            reports/
+            benchmark-results/
+            screenshots/
+

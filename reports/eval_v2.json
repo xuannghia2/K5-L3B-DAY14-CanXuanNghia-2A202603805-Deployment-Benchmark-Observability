@@ -1,0 +1,350 @@
+{
+  "target": "http://127.0.0.1:8002",
+  "agent_version": "v2",
+  "dataset": "C:\\Users\\xuann\\OneDrive\\Documents\\ChatGPT\\Vin\\K5-L3B-DAY14-CanXuanNghia-2A202603805-Deployment-Benchmark-Observability\\06-lab-complete\\benchmark-observability\\develop\\eval\\golden_dataset.jsonl",
+  "total": 23,
+  "passed": 21,
+  "accuracy": 0.913,
+  "avg_score": 0.913,
+  "errors": 0,
+  "latency_ms": {
+    "p50": 194.7,
+    "p95": 227.3
+  },
+  "total_cost_usd": 0.000759,
+  "avg_tokens": 109.0,
+  "cost_per_correct_usd": 3.616e-05,
+  "by_category": {
+    "benchmark": {
+      "total": 3,
+      "passed": 3,
+      "accuracy": 1.0
+    },
+    "cost": {
+      "total": 1,
+      "passed": 1,
+      "accuracy": 1.0
+    },
+    "deployment": {
+      "total": 3,
+      "passed": 3,
+      "accuracy": 1.0
+    },
+    "docker": {
+      "total": 2,
+      "passed": 2,
+      "accuracy": 1.0
+    },
+    "observability": {
+      "total": 6,
+      "passed": 6,
+      "accuracy": 1.0
+    },
+    "reliability": {
+      "total": 3,
+      "passed": 3,
+      "accuracy": 1.0
+    },
+    "scaling": {
+      "total": 3,
+      "passed": 2,
+      "accuracy": 0.67
+    },
+    "security": {
+      "total": 2,
+      "passed": 1,
+      "accuracy": 0.5
+    }
+  },
+  "results": [
+    {
+      "id": "basic-01",
+      "category": "deployment",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 227.4,
+      "cost_usd": 1.59e-05,
+      "tokens": 49,
+      "agent_version": "v2",
+      "answer": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được."
+    },
+    {
+      "id": "docker-01",
+      "category": "docker",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 209.8,
+      "cost_usd": 3.57e-05,
+      "tokens": 118,
+      "agent_version": "v2",
+      "answer": "Container đóng gói code cùng dependencies và runtime thành image chạy giống nhau ở mọi môi trường. Docker build image từ Dockerfile, chạy được ở laptop lẫn clou"
+    },
+    {
+      "id": "docker-02",
+      "category": "docker",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 226.5,
+      "cost_usd": 3.885e-05,
+      "tokens": 127,
+      "agent_version": "v2",
+      "answer": "Multi-stage build tách Dockerfile thành stage builder (cài compiler, build dependencies) và stage runtime chỉ copy kết quả cần thiết. Image cuối nhỏ hơn và ít l"
+    },
+    {
+      "id": "probe-01",
+      "category": "reliability",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 209.1,
+      "cost_usd": 2.295e-05,
+      "tokens": 81,
+      "agent_version": "v2",
+      "answer": "Liveness probe (GET /health) cho biết process còn sống. Nếu fail, platform sẽ restart container."
+    },
+    {
+      "id": "probe-02",
+      "category": "reliability",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 220.3,
+      "cost_usd": 3.33e-05,
+      "tokens": 111,
+      "agent_version": "v2",
+      "answer": "Readiness probe (GET /ready) cho biết instance sẵn sàng nhận traffic. Nếu fail, load balancer ngừng route traffic tới instance đó nhưng không restart."
+    },
+    {
+      "id": "reliability-01",
+      "category": "reliability",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 225.4,
+      "cost_usd": 3.48e-05,
+      "tokens": 115,
+      "agent_version": "v2",
+      "answer": "Graceful shutdown: khi nhận SIGTERM, app ngừng nhận request mới, chờ các request in-flight hoàn thành rồi mới thoát, nên không làm mất request của người dùng."
+    },
+    {
+      "id": "config-01",
+      "category": "deployment",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 173.3,
+      "cost_usd": 3.795e-05,
+      "tokens": 124,
+      "agent_version": "v2",
+      "answer": "12-Factor App yêu cầu lưu config trong biến môi trường (environment variables), không hardcode secret trong code, giúp cùng một image chạy được ở dev, staging v"
+    },
+    {
+      "id": "security-01",
+      "category": "security",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 150.4,
+      "cost_usd": 3.66e-05,
+      "tokens": 121,
+      "agent_version": "v2",
+      "answer": "Rate limiting giới hạn số request mỗi client trong một cửa sổ thời gian, ví dụ 10 req/phút. Vượt giới hạn thì trả HTTP 429 Too Many Requests kèm header Retry-Af"
+    },
+    {
+      "id": "security-02",
+      "category": "security",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "token",
+        "hết hạn",
+        "chữ ký"
+      ],
+      "latency_ms": 220.3,
+      "cost_usd": 1.71e-05,
+      "tokens": 54,
+      "agent_version": "v2",
+      "answer": "Câu hỏi hay! Điều này phụ thuộc vào kiến trúc hệ thống và yêu cầu cụ thể của bạn."
+    },
+    {
+      "id": "scaling-01",
+      "category": "scaling",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 192.2,
+      "cost_usd": 3.24e-05,
+      "tokens": 108,
+      "agent_version": "v2",
+      "answer": "Stateless nghĩa là instance không giữ state trong memory; session được lưu ở Redis. Nhờ vậy có thể scale ngang nhiều instance sau load balancer."
+    },
+    {
+      "id": "scaling-02",
+      "category": "scaling",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 185.3,
+      "cost_usd": 2.685e-05,
+      "tokens": 95,
+      "agent_version": "v2",
+      "answer": "Load balancer như Nginx phân phối request tới nhiều instance theo round-robin, và bỏ qua instance không healthy."
+    },
+    {
+      "id": "scaling-03",
+      "category": "scaling",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "cpu",
+        "memory",
+        "custom metrics"
+      ],
+      "latency_ms": 224.1,
+      "cost_usd": 1.755e-05,
+      "tokens": 57,
+      "agent_version": "v2",
+      "answer": "Câu hỏi hay! Điều này phụ thuộc vào kiến trúc hệ thống và yêu cầu cụ thể của bạn."
+    },
+    {
+      "id": "bench-01",
+      "category": "benchmark",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 165.4,
+      "cost_usd": 3.195e-05,
+      "tokens": 108,
+      "agent_version": "v2",
+      "answer": "Percentile p95 là ngưỡng mà 95% request nhanh hơn. Latency trung bình (average) che giấu tail latency, nên SLO thường đặt theo p95 hoặc p99."
+    },
+    {
+      "id": "bench-02",
+      "category": "benchmark",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 235.2,
+      "cost_usd": 3.57e-05,
+      "tokens": 118,
+      "agent_version": "v2",
+      "answer": "Eval chất lượng dùng golden dataset: bộ câu hỏi có đáp án mong đợi. Chạy eval trước mỗi lần deploy để bắt regression, ví dụ accuracy giảm so với phiên bản trước"
+    },
+    {
+      "id": "obs-01",
+      "category": "observability",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 180.6,
+      "cost_usd": 4.725e-05,
+      "tokens": 150,
+      "agent_version": "v2",
+      "answer": "Prometheus pull metrics bằng cách scrape endpoint /metrics theo chu kỳ. Counter chỉ tăng (đếm request), Gauge lên xuống (request đang xử lý), Histogram chia lat"
+    },
+    {
+      "id": "obs-02",
+      "category": "observability",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 196.7,
+      "cost_usd": 4.755e-05,
+      "tokens": 152,
+      "agent_version": "v2",
+      "answer": "Prometheus pull metrics bằng cách scrape endpoint /metrics theo chu kỳ. Counter chỉ tăng (đếm request), Gauge lên xuống (request đang xử lý), Histogram chia lat"
+    },
+    {
+      "id": "obs-03",
+      "category": "observability",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 191.4,
+      "cost_usd": 3.645e-05,
+      "tokens": 123,
+      "agent_version": "v2",
+      "answer": "Label có cardinality cao (user_id, request_id, câu hỏi) làm số time series bùng nổ và Prometheus tốn RAM. Chỉ dùng label có ít giá trị như route, status, model."
+    },
+    {
+      "id": "obs-04",
+      "category": "observability",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 194.7,
+      "cost_usd": 3.975e-05,
+      "tokens": 127,
+      "agent_version": "v2",
+      "answer": "Distributed tracing ghi lại một request đi qua những bước nào. Mỗi bước là một span có thời gian bắt đầu, kết thúc và attributes. OpenTelemetry thu thập trace v"
+    },
+    {
+      "id": "obs-05",
+      "category": "observability",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 187.5,
+      "cost_usd": 4.05e-05,
+      "tokens": 132,
+      "agent_version": "v2",
+      "answer": "Distributed tracing ghi lại một request đi qua những bước nào. Mỗi bước là một span có thời gian bắt đầu, kết thúc và attributes. OpenTelemetry thu thập trace v"
+    },
+    {
+      "id": "obs-06",
+      "category": "observability",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 147.9,
+      "cost_usd": 3.195e-05,
+      "tokens": 108,
+      "agent_version": "v2",
+      "answer": "Structured logging ghi log dạng JSON với các field cố định (timestamp, level, request_id, trace_id) để dễ tìm kiếm, lọc và liên kết với trace."
+    },
+    {
+      "id": "slo-01",
+      "category": "benchmark",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 156.0,
+      "cost_usd": 3.48e-05,
+      "tokens": 115,
+      "agent_version": "v2",
+      "answer": "SLI là chỉ số đo được (vd tỉ lệ request thành công), SLO là mục tiêu cho SLI (vd 99.5% trong 30 ngày). Error budget là phần được phép lỗi còn lại: 100% - SLO."
+    },
+    {
+      "id": "cost-01",
+      "category": "cost",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 216.8,
+      "cost_usd": 3.33e-05,
+      "tokens": 111,
+      "agent_version": "v2",
+      "answer": "Chi phí LLM tính theo token: cost = input_tokens x giá input + output_tokens x giá output. Cần theo dõi cost theo thời gian thực và đặt budget alert."
+    },
+    {
+      "id": "cloud-01",
+      "category": "deployment",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 161.2,
+      "cost_usd": 3.015e-05,
+      "tokens": 102,
+      "agent_version": "v2",
+      "answer": "Cloud Run, Railway, Render là nền tảng chạy container managed: tự scale, tự cấp HTTPS, bạn chỉ cần cung cấp image và biến môi trường."
+    }
+  ],
+  "quality_gate": {
+    "min_accuracy": 0.85,
+    "regressions": [],
+    "passed": true
+  }
+}

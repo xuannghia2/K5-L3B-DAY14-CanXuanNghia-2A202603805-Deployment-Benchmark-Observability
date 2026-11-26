@@ -34,3 +34,7 @@ Thumbs.db
 # ── Docker volumes (local dev) ─────────────────────��──────
 data/
 volumes/
+
+# Transient local server output
+reports/server-*.log
+

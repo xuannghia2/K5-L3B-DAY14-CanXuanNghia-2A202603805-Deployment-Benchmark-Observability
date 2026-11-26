@@ -1,0 +1,421 @@
+{
+  "target": "http://127.0.0.1:8001",
+  "agent_version": "v1",
+  "dataset": "C:\\Users\\xuann\\OneDrive\\Documents\\ChatGPT\\Vin\\K5-L3B-DAY14-CanXuanNghia-2A202603805-Deployment-Benchmark-Observability\\06-lab-complete\\benchmark-observability\\develop\\eval\\golden_dataset.jsonl",
+  "total": 23,
+  "passed": 1,
+  "accuracy": 0.0435,
+  "avg_score": 0.0578,
+  "errors": 0,
+  "latency_ms": {
+    "p50": 157.6,
+    "p95": 181.3
+  },
+  "total_cost_usd": 0.000406,
+  "avg_tokens": 57.3,
+  "cost_per_correct_usd": 0.00040635,
+  "by_category": {
+    "benchmark": {
+      "total": 3,
+      "passed": 0,
+      "accuracy": 0.0
+    },
+    "cost": {
+      "total": 1,
+      "passed": 0,
+      "accuracy": 0.0
+    },
+    "deployment": {
+      "total": 3,
+      "passed": 1,
+      "accuracy": 0.33
+    },
+    "docker": {
+      "total": 2,
+      "passed": 0,
+      "accuracy": 0.0
+    },
+    "observability": {
+      "total": 6,
+      "passed": 0,
+      "accuracy": 0.0
+    },
+    "reliability": {
+      "total": 3,
+      "passed": 0,
+      "accuracy": 0.0
+    },
+    "scaling": {
+      "total": 3,
+      "passed": 0,
+      "accuracy": 0.0
+    },
+    "security": {
+      "total": 2,
+      "passed": 0,
+      "accuracy": 0.0
+    }
+  },
+  "results": [
+    {
+      "id": "basic-01",
+      "category": "deployment",
+      "passed": true,
+      "score": 1.0,
+      "missing_keywords": [],
+      "latency_ms": 151.1,
+      "cost_usd": 1.59e-05,
+      "tokens": 49,
+      "agent_version": "v1",
+      "answer": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được."
+    },
+    {
+      "id": "docker-01",
+      "category": "docker",
+      "passed": false,
+      "score": 0.33,
+      "missing_keywords": [
+        "dependencies",
+        "môi trường"
+      ],
+      "latency_ms": 131.3,
+      "cost_usd": 1.65e-05,
+      "tokens": 56,
+      "agent_version": "v1",
+      "answer": "Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!"
+    },
+    {
+      "id": "docker-02",
+      "category": "docker",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "builder",
+        "runtime",
+        "nhỏ hơn"
+      ],
+      "latency_ms": 164.2,
+      "cost_usd": 1.65e-05,
+      "tokens": 56,
+      "agent_version": "v1",
+      "answer": "Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!"
+    },
+    {
+      "id": "probe-01",
+      "category": "reliability",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "còn sống",
+        "restart"
+      ],
+      "latency_ms": 139.7,
+      "cost_usd": 1.935e-05,
+      "tokens": 57,
+      "agent_version": "v1",
+      "answer": "Đây là câu trả lời từ AI agent (mock). Trong production, đây sẽ là response từ OpenAI/Anthropic."
+    },
+    {
+      "id": "probe-02",
+      "category": "reliability",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "load balancer",
+        "traffic",
+        "không restart"
+      ],
+      "latency_ms": 132.1,
+      "cost_usd": 1.98e-05,
+      "tokens": 60,
+      "agent_version": "v1",
+      "answer": "Đây là câu trả lời từ AI agent (mock). Trong production, đây sẽ là response từ OpenAI/Anthropic."
+    },
+    {
+      "id": "reliability-01",
+      "category": "reliability",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "sigterm",
+        "in-flight",
+        "request mới"
+      ],
+      "latency_ms": 180.2,
+      "cost_usd": 1.995e-05,
+      "tokens": 61,
+      "agent_version": "v1",
+      "answer": "Đây là câu trả lời từ AI agent (mock). Trong production, đây sẽ là response từ OpenAI/Anthropic."
+    },
+    {
+      "id": "config-01",
+      "category": "deployment",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "biến môi trường",
+        "hardcode"
+      ],
+      "latency_ms": 157.6,
+      "cost_usd": 1.755e-05,
+      "tokens": 57,
+      "agent_version": "v1",
+      "answer": "Câu hỏi hay! Điều này phụ thuộc vào kiến trúc hệ thống và yêu cầu cụ thể của bạn."
+    },
+    {
+      "id": "security-01",
+      "category": "security",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "429",
+        "retry-after"
+      ],
+      "latency_ms": 168.2,
+      "cost_usd": 2.025e-05,
+      "tokens": 63,
+      "agent_version": "v1",
+      "answer": "Đây là câu trả lời từ AI agent (mock). Trong production, đây sẽ là response từ OpenAI/Anthropic."
+    },
+    {
+      "id": "security-02",
+      "category": "security",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "token",
+        "hết hạn",
+        "chữ ký"
+      ],
+      "latency_ms": 131.1,
+      "cost_usd": 1.71e-05,
+      "tokens": 54,
+      "agent_version": "v1",
+      "answer": "Câu hỏi hay! Điều này phụ thuộc vào kiến trúc hệ thống và yêu cầu cụ thể của bạn."
+    },
+    {
+      "id": "scaling-01",
+      "category": "scaling",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "redis",
+        "session",
+        "load balancer"
+      ],
+      "latency_ms": 181.4,
+      "cost_usd": 1.56e-05,
+      "tokens": 53,
+      "agent_version": "v1",
+      "answer": "Tôi là AI agent được deploy lên cloud. Câu hỏi của bạn đã được nhận."
+    },
+    {
+      "id": "scaling-02",
+      "category": "scaling",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "round-robin",
+        "instance"
+      ],
+      "latency_ms": 159.6,
+      "cost_usd": 1.605e-05,
+      "tokens": 56,
+      "agent_version": "v1",
+      "answer": "Tôi là AI agent được deploy lên cloud. Câu hỏi của bạn đã được nhận."
+    },
+    {
+      "id": "scaling-03",
+      "category": "scaling",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "cpu",
+        "memory",
+        "custom metrics"
+      ],
+      "latency_ms": 138.8,
+      "cost_usd": 1.755e-05,
+      "tokens": 57,
+      "agent_version": "v1",
+      "answer": "Câu hỏi hay! Điều này phụ thuộc vào kiến trúc hệ thống và yêu cầu cụ thể của bạn."
+    },
+    {
+      "id": "bench-01",
+      "category": "benchmark",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "95%",
+        "tail latency",
+        "p99"
+      ],
+      "latency_ms": 160.8,
+      "cost_usd": 2.01e-05,
+      "tokens": 62,
+      "agent_version": "v1",
+      "answer": "Đây là câu trả lời từ AI agent (mock). Trong production, đây sẽ là response từ OpenAI/Anthropic."
+    },
+    {
+      "id": "bench-02",
+      "category": "benchmark",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "đáp án",
+        "regression"
+      ],
+      "latency_ms": 151.3,
+      "cost_usd": 1.695e-05,
+      "tokens": 56,
+      "agent_version": "v1",
+      "answer": "Deployment là quá trình đưa code từ máy bạn lên server để người khác dùng được."
+    },
+    {
+      "id": "obs-01",
+      "category": "observability",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "pull",
+        "scrape",
+        "/metrics"
+      ],
+      "latency_ms": 174.3,
+      "cost_usd": 1.605e-05,
+      "tokens": 56,
+      "agent_version": "v1",
+      "answer": "Tôi là AI agent được deploy lên cloud. Câu hỏi của bạn đã được nhận."
+    },
+    {
+      "id": "obs-02",
+      "category": "observability",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "chỉ tăng",
+        "lên xuống",
+        "bucket"
+      ],
+      "latency_ms": 151.7,
+      "cost_usd": 2.055e-05,
+      "tokens": 65,
+      "agent_version": "v1",
+      "answer": "Đây là câu trả lời từ AI agent (mock). Trong production, đây sẽ là response từ OpenAI/Anthropic."
+    },
+    {
+      "id": "obs-03",
+      "category": "observability",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "time series",
+        "ram"
+      ],
+      "latency_ms": 166.7,
+      "cost_usd": 1.845e-05,
+      "tokens": 63,
+      "agent_version": "v1",
+      "answer": "Câu hỏi hay! Điều này phụ thuộc vào kiến trúc hệ thống và yêu cầu cụ thể của bạn."
+    },
+    {
+      "id": "obs-04",
+      "category": "observability",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "span",
+        "attributes",
+        "thời gian"
+      ],
+      "latency_ms": 153.5,
+      "cost_usd": 1.545e-05,
+      "tokens": 52,
+      "agent_version": "v1",
+      "answer": "Tôi là AI agent được deploy lên cloud. Câu hỏi của bạn đã được nhận."
+    },
+    {
+      "id": "obs-05",
+      "category": "observability",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "trace",
+        "jaeger"
+      ],
+      "latency_ms": 159.1,
+      "cost_usd": 1.62e-05,
+      "tokens": 57,
+      "agent_version": "v1",
+      "answer": "Tôi là AI agent được deploy lên cloud. Câu hỏi của bạn đã được nhận."
+    },
+    {
+      "id": "obs-06",
+      "category": "observability",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "request_id",
+        "trace_id",
+        "lọc"
+      ],
+      "latency_ms": 180.6,
+      "cost_usd": 2.01e-05,
+      "tokens": 62,
+      "agent_version": "v1",
+      "answer": "Đây là câu trả lời từ AI agent (mock). Trong production, đây sẽ là response từ OpenAI/Anthropic."
+    },
+    {
+      "id": "slo-01",
+      "category": "benchmark",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "sli",
+        "100%"
+      ],
+      "latency_ms": 141.8,
+      "cost_usd": 1.74e-05,
+      "tokens": 56,
+      "agent_version": "v1",
+      "answer": "Câu hỏi hay! Điều này phụ thuộc vào kiến trúc hệ thống và yêu cầu cụ thể của bạn."
+    },
+    {
+      "id": "cost-01",
+      "category": "cost",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "token",
+        "input",
+        "output"
+      ],
+      "latency_ms": 148.7,
+      "cost_usd": 1.755e-05,
+      "tokens": 57,
+      "agent_version": "v1",
+      "answer": "Câu hỏi hay! Điều này phụ thuộc vào kiến trúc hệ thống và yêu cầu cụ thể của bạn."
+    },
+    {
+      "id": "cloud-01",
+      "category": "deployment",
+      "passed": false,
+      "score": 0.0,
+      "missing_keywords": [
+        "container",
+        "tự scale",
+        "https"
+      ],
+      "latency_ms": 191.5,
+      "cost_usd": 1.545e-05,
+      "tokens": 52,
+      "agent_version": "v1",
+      "answer": "Tôi là AI agent được deploy lên cloud. Câu hỏi của bạn đã được nhận."
+    }
+  ],
+  "quality_gate": {
+    "min_accuracy": 0.85,
+    "regressions": [],
+    "passed": false
+  }
+}
