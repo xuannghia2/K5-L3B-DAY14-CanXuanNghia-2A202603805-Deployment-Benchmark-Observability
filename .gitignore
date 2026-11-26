@@ -38,3 +38,5 @@ volumes/
 # Transient local server output
 reports/server-*.log
 
+
+.ci-evidence/

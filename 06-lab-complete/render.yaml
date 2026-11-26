@@ -10,7 +10,10 @@ services:
       - key: AGENT_API_KEY
         generateValue: true
       - key: REDIS_URL
-        sync: false
+        fromService:
+          type: keyvalue
+          name: day14-state
+          property: connectionString
       - key: ENVIRONMENT
         value: production
       - key: RATE_LIMIT_PER_MINUTE
@@ -19,4 +22,9 @@ services:
         value: "1"
       - key: MONTHLY_BUDGET_USD
         value: "10"
+  - type: keyvalue
+    name: day14-state
+    plan: free
+    ipAllowList: []
+    maxmemoryPolicy: noeviction
 
