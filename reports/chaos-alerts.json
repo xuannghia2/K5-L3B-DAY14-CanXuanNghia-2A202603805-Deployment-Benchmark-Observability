@@ -1,0 +1,1379 @@
+{
+  "settings": {
+    "MOCK_ERROR_RATE": 0.2,
+    "MOCK_SLOW_RATE": 0.3
+  },
+  "first_firing_seconds": {
+    "AgentHighErrorRate": 81.9,
+    "AgentHighLatencyP95": 142.0
+  },
+  "samples": [
+    {
+      "elapsed_s": 3.7,
+      "alerts": []
+    },
+    {
+      "elapsed_s": 6.8,
+      "alerts": []
+    },
+    {
+      "elapsed_s": 9.8,
+      "alerts": []
+    },
+    {
+      "elapsed_s": 12.8,
+      "alerts": []
+    },
+    {
+      "elapsed_s": 15.8,
+      "alerts": []
+    },
+    {
+      "elapsed_s": 18.8,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.18.0.9:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus kh\u00f4ng g\u1ecdi \u0111\u01b0\u1ee3c /metrics c\u1ee7a 172.18.0.9:8000 trong 30s",
+            "summary": "Instance agent 172.18.0.9:8000 kh\u00f4ng scrape \u0111\u01b0\u1ee3c"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:32.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 21.8,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.18.0.9:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus kh\u00f4ng g\u1ecdi \u0111\u01b0\u1ee3c /metrics c\u1ee7a 172.18.0.9:8000 trong 30s",
+            "summary": "Instance agent 172.18.0.9:8000 kh\u00f4ng scrape \u0111\u01b0\u1ee3c"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:32.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 24.8,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 19.74% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.97403961250762e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.852s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.852336573463639e+00"
+        },
+        {
+          "labels": {
+            "alertname": "AgentInstanceDown",
+            "instance": "172.18.0.9:8000",
+            "job": "agent",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Prometheus kh\u00f4ng g\u1ecdi \u0111\u01b0\u1ee3c /metrics c\u1ee7a 172.18.0.9:8000 trong 30s",
+            "summary": "Instance agent 172.18.0.9:8000 kh\u00f4ng scrape \u0111\u01b0\u1ee3c"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:32.401817116Z",
+          "value": "0e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 27.8,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.9% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.089733186907404e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.861s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.861375168699212e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 30.8,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.9% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.089733186907404e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.861s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.861375168699212e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 33.8,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.67% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.0666126809977656e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.866s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8661269930231852e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 36.8,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.67% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.0666126809977656e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.866s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8661269930231852e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 39.8,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.84% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.0839618702407203e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.88s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8804418693104545e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 42.8,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.72% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.0722686878420374e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.88s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8802832029235117e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 45.8,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.72% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.0722686878420374e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.88s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8802832029235117e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 48.8,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 21.25% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.1252337024756313e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.884s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8838116154342606e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 51.9,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 21.25% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.1252337024756313e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.884s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8838116154342606e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 54.9,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 21.58% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.1575516492527147e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.888s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8876652499587852e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 57.9,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 21.05% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.1053012205060487e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.891s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.890577142309562e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 60.9,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 21.05% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.1053012205060487e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.891s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.890577142309562e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 63.9,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.96% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.0960175058493685e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.893s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8925365071256777e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 66.9,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.96% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.0960175058493685e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.893s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8925365071256777e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 69.9,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.78% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.0780287802983713e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.894s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8939412105658984e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 72.9,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.69% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.0690316752451451e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.894s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8941878686379252e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 75.9,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.69% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.0690316752451451e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.894s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8941878686379252e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 78.9,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.97% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.0970042796005708e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.897s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8969117647058822e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 81.9,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 21.13% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.1133285816108338e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.898s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8981857764876633e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 84.9,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 21.13% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.1133285816108338e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.898s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8981857764876633e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 87.9,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 21.02% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.101501072194425e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.902s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.901617440225035e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 90.9,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 21.02% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.101501072194425e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.902s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.901617440225035e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 93.9,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.76% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.076012907852277e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.901s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.900676638176638e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 96.9,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.69% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.0688418788096094e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.902s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.901795774647887e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 99.9,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.69% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.0688418788096094e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.902s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.901795774647887e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 103.0,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.15% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.0151405912040377e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.903s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.90273492286115e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 106.0,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.15% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.0151405912040377e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.903s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.90273492286115e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 109.0,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.06% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.006472491909385e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.902s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.9023525280898874e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 112.0,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.72% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.072202166064982e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.9s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.9002161383285299e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 115.0,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.72% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.072202166064982e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.9s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.9002161383285299e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 118.0,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.55% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.054794520547945e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.901s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.9005021520803442e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 121.0,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.55% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.054794520547945e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.901s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.9005021520803442e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 124.0,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.52% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.0517427236794827e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.9s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8996031746031745e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 127.0,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.3% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.03012912482066e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.899s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8985443959243082e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 130.0,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 20.3% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "2.03012912482066e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.899s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8985443959243082e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 133.0,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 19.95% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.9949766774309294e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.9s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.9001790830945557e+00"
+        },
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $2.02/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:14:27.571501534Z",
+          "value": "2.0236989014922e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 136.0,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 19.95% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.9949766774309294e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.9s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.9001790830945557e+00"
+        },
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $2.02/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:14:27.571501534Z",
+          "value": "2.0236989014922e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 139.0,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $2.12/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:14:27.571501534Z",
+          "value": "2.118804344220029e+00"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 19.27% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.927064712191634e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.9s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.9001071428571428e+00"
+        }
+      ]
+    },
+    {
+      "elapsed_s": 142.0,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "LLMCostBurnRateHigh",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "T\u1ed1c \u0111\u1ed9 chi ti\u00eau hi\u1ec7n t\u1ea1i: $2.12/gi\u1edd",
+            "summary": "Chi ph\u00ed LLM \u0111ang v\u01b0\u1ee3t $2/gi\u1edd"
+          },
+          "state": "pending",
+          "activeAt": "2026-11-26T09:14:27.571501534Z",
+          "value": "2.118804344220029e+00"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighErrorRate",
+            "severity": "critical"
+          },
+          "annotations": {
+            "description": "Error rate hi\u1ec7n t\u1ea1i: 19.44% (SLO: < 5%)",
+            "summary": "Error rate /ask v\u01b0\u1ee3t 5%"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.944146079484425e-01"
+        },
+        {
+          "labels": {
+            "alertname": "AgentHighLatencyP95",
+            "severity": "warning"
+          },
+          "annotations": {
+            "description": "p95 hi\u1ec7n t\u1ea1i: 1.899s (SLO: < 1s)",
+            "summary": "p95 latency /ask v\u01b0\u1ee3t 1 gi\u00e2y"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-26T09:12:37.401817116Z",
+          "value": "1.8990968208092485e+00"
+        }
+      ]
+    }
+  ]
+}

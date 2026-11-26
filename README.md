@@ -1,13 +1,15 @@
+> Bài làm: [Mission Answers](MISSION_ANSWERS.md) · [Deployment](DEPLOYMENT.md) · [Benchmark Report](BENCHMARK_REPORT.md) · [Agent public](https://day14-production-agent-haua.onrender.com/health)
+
 # Day 14 — Deployment, Benchmark & Observability
 
 > Đưa agent lên cloud, đo xem nó nhanh và đúng tới đâu, rồi giám sát nó khi chạy thật.
 
-> **AICB-P1 · VinUniversity 2026**  
-> Repository thực hành đi kèm bài giảng Day 14.  
+> **AICB-P1 · VinUniversity 2026**
+> Repository thực hành đi kèm bài giảng Day 14.
 > Mỗi phần có ví dụ **cơ bản** (hiểu concept) và **chuyên sâu** (production-ready).
 
-> **Hình thức: CÁ NHÂN** · **Thời lượng:** 4 giờ tại lớp · **Deadline:** 23h59 (GMT+7) ngày lab, trừ khi Lab Coach thông báo khác  
-> **Đọc theo thứ tự:** README → [RULES](RULES.md) → [CHECKPOINTS](CHECKPOINTS.md) → [SUBMISSION](SUBMISSION.md) → [RUBRIC](RUBRIC.md)  
+> **Hình thức: CÁ NHÂN** · **Thời lượng:** 4 giờ tại lớp · **Deadline:** 23h59 (GMT+7) ngày lab, trừ khi Lab Coach thông báo khác
+> **Đọc theo thứ tự:** README → [RULES](RULES.md) → [CHECKPOINTS](CHECKPOINTS.md) → [SUBMISSION](SUBMISSION.md) → [RUBRIC](RUBRIC.md)
 > **Bài nộp:** repo `K5-<L3A|L3B>-DAY14-HoVaTen-MSSV-Deployment-Benchmark-Observability`, nộp **link repo** trên LMS (chi tiết: [SUBMISSION.md](SUBMISSION.md)).
 
 ### ⚠️ Lưu ý khi làm bài (K5)

@@ -1,0 +1,2 @@
+HTTP 200
+{"answer":"Tôi là AI agent được deploy lên cloud. Câu hỏi của bạn đã được nhận."}

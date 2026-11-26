@@ -1,0 +1,232 @@
+### 1.2 query request
+HTTP 200
+date: Thu, 26 Nov 2026 08:43:59 GMT
+server: uvicorn
+content-length: 95
+content-type: application/json
+
+{"answer":"Agent đang hoạt động tốt! (mock response) Hỏi thêm câu hỏi đi nhé."}
+
+### 1.2 JSON mismatch
+HTTP 422
+date: Thu, 26 Nov 2026 08:43:59 GMT
+server: uvicorn
+content-length: 94
+content-type: application/json
+
+{"detail":[{"type":"missing","loc":["query","question"],"msg":"Field required","input":null}]}
+
+### 1.3 production ask
+HTTP 200
+date: Thu, 26 Nov 2026 08:44:04 GMT
+server: uvicorn
+content-length: 156
+content-type: application/json
+
+{"question":"Docker deployment","answer":"Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!","model":"gpt-4o-mini"}
+
+### 4.1 missing key
+HTTP 401
+date: Thu, 26 Nov 2026 08:44:10 GMT
+server: uvicorn
+content-length: 67
+content-type: application/json
+
+{"detail":"Missing API key. Include header: X-API-Key: <your-key>"}
+
+### 4.1 correct key
+HTTP 200
+date: Thu, 26 Nov 2026 08:44:15 GMT
+server: uvicorn
+content-length: 114
+content-type: application/json
+
+{"question":"Hello","answer":"Agent đang hoạt động tốt! (mock response) Hỏi thêm câu hỏi đi nhé."}
+
+### 4.2 no JWT
+HTTP 401
+date: Thu, 26 Nov 2026 08:44:21 GMT
+server: uvicorn
+www-authenticate: Bearer
+content-length: 76
+content-type: application/json
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+referrer-policy: strict-origin-when-cross-origin
+
+{"detail":"Authentication required. Include: Authorization: Bearer <token>"}
+
+### 4.3 authenticated request 1
+HTTP 200
+date: Thu, 26 Nov 2026 08:44:21 GMT
+server: uvicorn
+content-length: 187
+content-type: application/json
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+referrer-policy: strict-origin-when-cross-origin
+
+{"question":"Docker","answer":"Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!","usage":{"requests_remaining":9,"budget_remaining_usd":1.8e-05}}
+
+### 4.3 authenticated request 2
+HTTP 200
+date: Thu, 26 Nov 2026 08:44:21 GMT
+server: uvicorn
+content-length: 187
+content-type: application/json
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+referrer-policy: strict-origin-when-cross-origin
+
+{"question":"Docker","answer":"Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!","usage":{"requests_remaining":8,"budget_remaining_usd":3.7e-05}}
+
+### 4.3 authenticated request 3
+HTTP 200
+date: Thu, 26 Nov 2026 08:44:21 GMT
+server: uvicorn
+content-length: 187
+content-type: application/json
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+referrer-policy: strict-origin-when-cross-origin
+
+{"question":"Docker","answer":"Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!","usage":{"requests_remaining":7,"budget_remaining_usd":5.5e-05}}
+
+### 4.3 authenticated request 4
+HTTP 200
+date: Thu, 26 Nov 2026 08:44:21 GMT
+server: uvicorn
+content-length: 187
+content-type: application/json
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+referrer-policy: strict-origin-when-cross-origin
+
+{"question":"Docker","answer":"Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!","usage":{"requests_remaining":6,"budget_remaining_usd":7.3e-05}}
+
+### 4.3 authenticated request 5
+HTTP 200
+date: Thu, 26 Nov 2026 08:44:21 GMT
+server: uvicorn
+content-length: 187
+content-type: application/json
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+referrer-policy: strict-origin-when-cross-origin
+
+{"question":"Docker","answer":"Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!","usage":{"requests_remaining":5,"budget_remaining_usd":9.1e-05}}
+
+### 4.3 authenticated request 6
+HTTP 200
+date: Thu, 26 Nov 2026 08:44:21 GMT
+server: uvicorn
+content-length: 187
+content-type: application/json
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+referrer-policy: strict-origin-when-cross-origin
+
+{"question":"Docker","answer":"Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!","usage":{"requests_remaining":4,"budget_remaining_usd":0.00011}}
+
+### 4.3 authenticated request 7
+HTTP 200
+date: Thu, 26 Nov 2026 08:44:21 GMT
+server: uvicorn
+content-length: 188
+content-type: application/json
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+referrer-policy: strict-origin-when-cross-origin
+
+{"question":"Docker","answer":"Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!","usage":{"requests_remaining":3,"budget_remaining_usd":0.000128}}
+
+### 4.3 authenticated request 8
+HTTP 200
+date: Thu, 26 Nov 2026 08:44:21 GMT
+server: uvicorn
+content-length: 188
+content-type: application/json
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+referrer-policy: strict-origin-when-cross-origin
+
+{"question":"Docker","answer":"Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!","usage":{"requests_remaining":2,"budget_remaining_usd":0.000146}}
+
+### 4.3 authenticated request 9
+HTTP 200
+date: Thu, 26 Nov 2026 08:44:22 GMT
+server: uvicorn
+content-length: 188
+content-type: application/json
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+referrer-policy: strict-origin-when-cross-origin
+
+{"question":"Docker","answer":"Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!","usage":{"requests_remaining":1,"budget_remaining_usd":0.000165}}
+
+### 4.3 authenticated request 10
+HTTP 200
+date: Thu, 26 Nov 2026 08:44:22 GMT
+server: uvicorn
+content-length: 188
+content-type: application/json
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+referrer-policy: strict-origin-when-cross-origin
+
+{"question":"Docker","answer":"Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!","usage":{"requests_remaining":0,"budget_remaining_usd":0.000183}}
+
+### 4.3 authenticated request 11
+HTTP 429
+date: Thu, 26 Nov 2026 08:44:22 GMT
+server: uvicorn
+x-ratelimit-limit: 10
+x-ratelimit-remaining: 0
+x-ratelimit-reset: 1795682723
+retry-after: 59
+content-length: 98
+content-type: application/json
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+referrer-policy: strict-origin-when-cross-origin
+
+{"detail":{"error":"Rate limit exceeded","limit":10,"window_seconds":60,"retry_after_seconds":59}}
+
+### 5.1 health
+HTTP 200
+date: Thu, 26 Nov 2026 08:44:28 GMT
+server: uvicorn
+content-length: 185
+content-type: application/json
+
+{"status":"ok","uptime_seconds":3.6,"version":"1.0.0","environment":"development","timestamp":"2026-11-26T08:44:28.353362+00:00","checks":{"memory":{"status":"ok","used_percent":70.7}}}
+
+### 5.2 ready
+HTTP 200
+date: Thu, 26 Nov 2026 08:44:28 GMT
+server: uvicorn
+content-length: 37
+content-type: application/json
+
+{"ready":true,"in_flight_requests":1}
+
+### 5.3 ask
+HTTP 200
+date: Thu, 26 Nov 2026 08:44:28 GMT
+server: uvicorn
+content-length: 95
+content-type: application/json
+
+{"answer":"Agent đang hoạt động tốt! (mock response) Hỏi thêm câu hỏi đi nhé."}

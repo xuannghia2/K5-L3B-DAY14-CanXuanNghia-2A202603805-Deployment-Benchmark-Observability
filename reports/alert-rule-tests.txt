@@ -1,0 +1,2 @@
+Processing test file: /p/alert_rules_test.yml
+  SUCCESS

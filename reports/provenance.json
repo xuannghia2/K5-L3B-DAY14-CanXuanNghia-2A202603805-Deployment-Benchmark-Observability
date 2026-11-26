@@ -1,0 +1,29 @@
+{
+  "sources": {
+    "production_readiness": {
+      "run": 45785321467,
+      "checks": "43/43",
+      "criteria": "12/12"
+    },
+    "final_production_integration": {
+      "run": 45790570860,
+      "artifact": 15103245587,
+      "passed": 4
+    },
+    "cloud": "reports/public-deployment.json",
+    "local_benchmark": "reports/environment.json",
+    "part2_and_part5": {
+      "run": 45786462187,
+      "artifact": 15101083098
+    },
+    "observability": {
+      "run": 45789465192,
+      "artifact": 15102432283
+    },
+    "scaling": {
+      "run": 45790570860,
+      "artifact": 15102328095
+    }
+  },
+  "note": "Images and JSON/CSV are measured evidence. Scaling files were replaced after verifying replica counts; observability and scaling are separate runs."
+}

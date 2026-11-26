@@ -1,0 +1,19 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.18, pytest-9.2.0, pluggy-1.7.0 -- /opt/hostedtoolcache/Python/3.11.18/x64/bin/python
+cachedir: .pytest_cache
+rootdir: /home/runner/work/K5-L3B-DAY14-CanXuanNghia-2A202603805-Deployment-Benchmark-Observability/K5-L3B-DAY14-CanXuanNghia-2A202603805-Deployment-Benchmark-Observability
+plugins: anyio-4.16.0
+collecting ... collected 4 items
+
+tests/test_guards.py::test_atomic_limit_across_threads_and_reload PASSED [ 25%]
+tests/test_guards.py::test_budget_persists_and_blocks_at_boundary PASSED [ 50%]
+tests/test_guards.py::test_auth_and_invalid_input PASSED                 [ 75%]
+tests/test_guards.py::test_redis_failure_is_503_and_health_stays_live PASSED [100%]
+
+=============================== warnings summary ===============================
+../../../../../opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/starlette/testclient.py:40
+  /opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/starlette/testclient.py:40: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 4 passed, 1 warning in 0.59s =========================

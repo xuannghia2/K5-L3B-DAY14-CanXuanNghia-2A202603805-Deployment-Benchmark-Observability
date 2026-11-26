@@ -1,0 +1,16 @@
+{
+  "date_local": "2026-11-26 15:38:55",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "python": "3.11.18",
+  "cpu_count": 12,
+  "load": {
+    "requests": 300,
+    "MOCK_ERROR_RATE": 0.01,
+    "MOCK_SLOW_RATE": 0.03
+  },
+  "eval": {
+    "MOCK_ERROR_RATE": 0,
+    "MOCK_SLOW_RATE": 0
+  },
+  "notes": "Load SLO failure exit 1 is retained as measured evidence."
+}

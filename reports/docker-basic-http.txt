@@ -1,0 +1,2 @@
+HTTP 200
+{"answer":"Container là cách đóng gói app để chạy ở mọi nơi. Build once, run anywhere!"}

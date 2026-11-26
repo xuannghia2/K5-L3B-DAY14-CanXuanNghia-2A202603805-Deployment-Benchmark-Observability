@@ -1,0 +1,29 @@
+{
+  "base": "https://day14-production-agent-haua.onrender.com",
+  "checks": [
+    {
+      "name": "health",
+      "status": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "ready",
+      "status": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "ask_no_key",
+      "status": 401,
+      "expected": 401,
+      "passed": true
+    },
+    {
+      "name": "ask_with_key",
+      "status": 200,
+      "expected": 200,
+      "passed": true
+    }
+  ]
+}

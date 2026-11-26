@@ -1,0 +1,668 @@
+{
+  "slow": {
+    "traceID": "8018abb9d6006bec1359f9c667fbbd79",
+    "spans": [
+      {
+        "traceID": "8018abb9d6006bec1359f9c667fbbd79",
+        "spanID": "3c7fb28a173dfda5",
+        "operationName": "agent.retrieve_context",
+        "references": [
+          {
+            "refType": "CHILD_OF",
+            "traceID": "8018abb9d6006bec1359f9c667fbbd79",
+            "spanID": "02d633cc27e6a194"
+          }
+        ],
+        "startTime": 1795684368004545,
+        "duration": 16575,
+        "tags": [
+          {
+            "key": "otel.scope.name",
+            "type": "string",
+            "value": "agent"
+          },
+          {
+            "key": "retrieval.documents",
+            "type": "int64",
+            "value": 1
+          },
+          {
+            "key": "span.kind",
+            "type": "string",
+            "value": "internal"
+          }
+        ],
+        "logs": [],
+        "processID": "p1",
+        "warnings": null
+      },
+      {
+        "traceID": "8018abb9d6006bec1359f9c667fbbd79",
+        "spanID": "7651645b633562ef",
+        "operationName": "chat mock-llm-small",
+        "references": [
+          {
+            "refType": "CHILD_OF",
+            "traceID": "8018abb9d6006bec1359f9c667fbbd79",
+            "spanID": "02d633cc27e6a194"
+          }
+        ],
+        "startTime": 1795684368021167,
+        "duration": 1699895,
+        "tags": [
+          {
+            "key": "otel.scope.name",
+            "type": "string",
+            "value": "agent"
+          },
+          {
+            "key": "gen_ai.operation.name",
+            "type": "string",
+            "value": "chat"
+          },
+          {
+            "key": "gen_ai.provider.name",
+            "type": "string",
+            "value": "mock"
+          },
+          {
+            "key": "gen_ai.request.model",
+            "type": "string",
+            "value": "mock-llm-small"
+          },
+          {
+            "key": "gen_ai.usage.input_tokens",
+            "type": "int64",
+            "value": 95
+          },
+          {
+            "key": "gen_ai.usage.output_tokens",
+            "type": "int64",
+            "value": 55
+          },
+          {
+            "key": "llm.cost_usd",
+            "type": "float64",
+            "value": 4.7249999999999997e-05
+          },
+          {
+            "key": "span.kind",
+            "type": "string",
+            "value": "internal"
+          }
+        ],
+        "logs": [],
+        "processID": "p1",
+        "warnings": null
+      },
+      {
+        "traceID": "8018abb9d6006bec1359f9c667fbbd79",
+        "spanID": "02d633cc27e6a194",
+        "operationName": "agent.run",
+        "references": [
+          {
+            "refType": "CHILD_OF",
+            "traceID": "8018abb9d6006bec1359f9c667fbbd79",
+            "spanID": "d34cacd96c14e46a"
+          }
+        ],
+        "startTime": 1795684368004522,
+        "duration": 1716575,
+        "tags": [
+          {
+            "key": "otel.scope.name",
+            "type": "string",
+            "value": "agent"
+          },
+          {
+            "key": "agent.question.length",
+            "type": "int64",
+            "value": 54
+          },
+          {
+            "key": "agent.version",
+            "type": "string",
+            "value": "v2"
+          },
+          {
+            "key": "span.kind",
+            "type": "string",
+            "value": "internal"
+          }
+        ],
+        "logs": [],
+        "processID": "p1",
+        "warnings": null
+      },
+      {
+        "traceID": "8018abb9d6006bec1359f9c667fbbd79",
+        "spanID": "d34cacd96c14e46a",
+        "operationName": "POST /ask",
+        "references": [],
+        "startTime": 1795684368003787,
+        "duration": 1717762,
+        "tags": [
+          {
+            "key": "otel.scope.name",
+            "type": "string",
+            "value": "opentelemetry.instrumentation.fastapi"
+          },
+          {
+            "key": "otel.scope.version",
+            "type": "string",
+            "value": "0.66b2"
+          },
+          {
+            "key": "http.flavor",
+            "type": "string",
+            "value": "1.1"
+          },
+          {
+            "key": "http.host",
+            "type": "string",
+            "value": "172.18.0.5:8000"
+          },
+          {
+            "key": "http.method",
+            "type": "string",
+            "value": "POST"
+          },
+          {
+            "key": "http.route",
+            "type": "string",
+            "value": "/ask"
+          },
+          {
+            "key": "http.scheme",
+            "type": "string",
+            "value": "http"
+          },
+          {
+            "key": "http.server_name",
+            "type": "string",
+            "value": "nginx"
+          },
+          {
+            "key": "http.status_code",
+            "type": "int64",
+            "value": 200
+          },
+          {
+            "key": "http.target",
+            "type": "string",
+            "value": "/ask"
+          },
+          {
+            "key": "http.url",
+            "type": "string",
+            "value": "http://nginx/ask"
+          },
+          {
+            "key": "http.user_agent",
+            "type": "string",
+            "value": "python-requests/2.34.2"
+          },
+          {
+            "key": "net.host.port",
+            "type": "int64",
+            "value": 8000
+          },
+          {
+            "key": "net.peer.ip",
+            "type": "string",
+            "value": "172.18.0.6"
+          },
+          {
+            "key": "net.peer.port",
+            "type": "int64",
+            "value": 38638
+          },
+          {
+            "key": "span.kind",
+            "type": "string",
+            "value": "server"
+          }
+        ],
+        "logs": [],
+        "processID": "p1",
+        "warnings": null
+      }
+    ],
+    "processes": {
+      "p1": {
+        "serviceName": "observable-agent",
+        "tags": [
+          {
+            "key": "agent.version",
+            "type": "string",
+            "value": "v2"
+          },
+          {
+            "key": "deployment.environment.name",
+            "type": "string",
+            "value": "lab"
+          },
+          {
+            "key": "service.instance.id",
+            "type": "string",
+            "value": "00f3b35eea9a"
+          },
+          {
+            "key": "service.version",
+            "type": "string",
+            "value": "1.0.0"
+          },
+          {
+            "key": "telemetry.sdk.language",
+            "type": "string",
+            "value": "python"
+          },
+          {
+            "key": "telemetry.sdk.name",
+            "type": "string",
+            "value": "opentelemetry"
+          },
+          {
+            "key": "telemetry.sdk.version",
+            "type": "string",
+            "value": "1.45.2"
+          }
+        ]
+      }
+    },
+    "warnings": null
+  },
+  "error": {
+    "traceID": "d8f79e38e1fffc3ce1df6527734c15a2",
+    "spans": [
+      {
+        "traceID": "d8f79e38e1fffc3ce1df6527734c15a2",
+        "spanID": "49e48260300c8f7c",
+        "operationName": "agent.retrieve_context",
+        "references": [
+          {
+            "refType": "CHILD_OF",
+            "traceID": "d8f79e38e1fffc3ce1df6527734c15a2",
+            "spanID": "4bafed51d2ef23ba"
+          }
+        ],
+        "startTime": 1795684476470786,
+        "duration": 23550,
+        "tags": [
+          {
+            "key": "otel.scope.name",
+            "type": "string",
+            "value": "agent"
+          },
+          {
+            "key": "retrieval.documents",
+            "type": "int64",
+            "value": 1
+          },
+          {
+            "key": "span.kind",
+            "type": "string",
+            "value": "internal"
+          }
+        ],
+        "logs": [],
+        "processID": "p1",
+        "warnings": null
+      },
+      {
+        "traceID": "d8f79e38e1fffc3ce1df6527734c15a2",
+        "spanID": "36610d527d7eed19",
+        "operationName": "chat mock-llm-small",
+        "references": [
+          {
+            "refType": "CHILD_OF",
+            "traceID": "d8f79e38e1fffc3ce1df6527734c15a2",
+            "spanID": "4bafed51d2ef23ba"
+          }
+        ],
+        "startTime": 1795684476494388,
+        "duration": 832129,
+        "tags": [
+          {
+            "key": "otel.scope.name",
+            "type": "string",
+            "value": "agent"
+          },
+          {
+            "key": "error.type",
+            "type": "string",
+            "value": "upstream_unavailable"
+          },
+          {
+            "key": "gen_ai.operation.name",
+            "type": "string",
+            "value": "chat"
+          },
+          {
+            "key": "gen_ai.provider.name",
+            "type": "string",
+            "value": "mock"
+          },
+          {
+            "key": "gen_ai.request.model",
+            "type": "string",
+            "value": "mock-llm-small"
+          },
+          {
+            "key": "span.kind",
+            "type": "string",
+            "value": "internal"
+          },
+          {
+            "key": "otel.status_code",
+            "type": "string",
+            "value": "ERROR"
+          },
+          {
+            "key": "error",
+            "type": "bool",
+            "value": true
+          },
+          {
+            "key": "otel.status_description",
+            "type": "string",
+            "value": "LLMError: Upstream LLM error: 503 Service Unavailable (mock)"
+          }
+        ],
+        "logs": [
+          {
+            "timestamp": 1795684477326489,
+            "fields": [
+              {
+                "key": "event",
+                "type": "string",
+                "value": "exception"
+              },
+              {
+                "key": "exception.escaped",
+                "type": "string",
+                "value": "False"
+              },
+              {
+                "key": "exception.message",
+                "type": "string",
+                "value": "Upstream LLM error: 503 Service Unavailable (mock)"
+              },
+              {
+                "key": "exception.stacktrace",
+                "type": "string",
+                "value": "Traceback (most recent call last):\n  File \"/app/app/main.py\", line 153, in run_agent\n    result = await mock_llm.generate(question, context=context,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/utils/mock_llm.py\", line 205, in generate\n    raise LLMError(\"Upstream LLM error: 503 Service Unavailable (mock)\")\nutils.mock_llm.LLMError: Upstream LLM error: 503 Service Unavailable (mock)\n"
+              },
+              {
+                "key": "exception.type",
+                "type": "string",
+                "value": "utils.mock_llm.LLMError"
+              }
+            ]
+          }
+        ],
+        "processID": "p1",
+        "warnings": null
+      },
+      {
+        "traceID": "d8f79e38e1fffc3ce1df6527734c15a2",
+        "spanID": "4bafed51d2ef23ba",
+        "operationName": "agent.run",
+        "references": [
+          {
+            "refType": "CHILD_OF",
+            "traceID": "d8f79e38e1fffc3ce1df6527734c15a2",
+            "spanID": "eb0b67952ebf5fbd"
+          }
+        ],
+        "startTime": 1795684476470764,
+        "duration": 855938,
+        "tags": [
+          {
+            "key": "otel.scope.name",
+            "type": "string",
+            "value": "agent"
+          },
+          {
+            "key": "agent.question.length",
+            "type": "int64",
+            "value": 44
+          },
+          {
+            "key": "agent.version",
+            "type": "string",
+            "value": "v2"
+          },
+          {
+            "key": "span.kind",
+            "type": "string",
+            "value": "internal"
+          },
+          {
+            "key": "otel.status_code",
+            "type": "string",
+            "value": "ERROR"
+          },
+          {
+            "key": "error",
+            "type": "bool",
+            "value": true
+          },
+          {
+            "key": "otel.status_description",
+            "type": "string",
+            "value": "LLMError: Upstream LLM error: 503 Service Unavailable (mock)"
+          }
+        ],
+        "logs": [
+          {
+            "timestamp": 1795684477326697,
+            "fields": [
+              {
+                "key": "event",
+                "type": "string",
+                "value": "exception"
+              },
+              {
+                "key": "exception.escaped",
+                "type": "string",
+                "value": "False"
+              },
+              {
+                "key": "exception.message",
+                "type": "string",
+                "value": "Upstream LLM error: 503 Service Unavailable (mock)"
+              },
+              {
+                "key": "exception.stacktrace",
+                "type": "string",
+                "value": "Traceback (most recent call last):\n  File \"/home/agent/.local/lib/python3.11/site-packages/opentelemetry/trace/__init__.py\", line 602, in use_span\n    yield span\n  File \"/home/agent/.local/lib/python3.11/site-packages/opentelemetry/sdk/trace/__init__.py\", line 1136, in start_as_current_span\n    yield span\n  File \"/home/agent/.local/lib/python3.11/site-packages/opentelemetry/trace/__init__.py\", line 441, in start_as_current_span\n    yield span\n  File \"/app/app/main.py\", line 153, in run_agent\n    result = await mock_llm.generate(question, context=context,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/utils/mock_llm.py\", line 205, in generate\n    raise LLMError(\"Upstream LLM error: 503 Service Unavailable (mock)\")\nutils.mock_llm.LLMError: Upstream LLM error: 503 Service Unavailable (mock)\n"
+              },
+              {
+                "key": "exception.type",
+                "type": "string",
+                "value": "utils.mock_llm.LLMError"
+              }
+            ]
+          }
+        ],
+        "processID": "p1",
+        "warnings": null
+      },
+      {
+        "traceID": "d8f79e38e1fffc3ce1df6527734c15a2",
+        "spanID": "eb0b67952ebf5fbd",
+        "operationName": "POST /ask",
+        "references": [],
+        "startTime": 1795684476470224,
+        "duration": 856809,
+        "tags": [
+          {
+            "key": "otel.scope.name",
+            "type": "string",
+            "value": "opentelemetry.instrumentation.fastapi"
+          },
+          {
+            "key": "otel.scope.version",
+            "type": "string",
+            "value": "0.66b2"
+          },
+          {
+            "key": "http.flavor",
+            "type": "string",
+            "value": "1.1"
+          },
+          {
+            "key": "http.host",
+            "type": "string",
+            "value": "172.18.0.8:8000"
+          },
+          {
+            "key": "http.method",
+            "type": "string",
+            "value": "POST"
+          },
+          {
+            "key": "http.route",
+            "type": "string",
+            "value": "/ask"
+          },
+          {
+            "key": "http.scheme",
+            "type": "string",
+            "value": "http"
+          },
+          {
+            "key": "http.server_name",
+            "type": "string",
+            "value": "nginx"
+          },
+          {
+            "key": "http.status_code",
+            "type": "int64",
+            "value": 503
+          },
+          {
+            "key": "http.target",
+            "type": "string",
+            "value": "/ask"
+          },
+          {
+            "key": "http.url",
+            "type": "string",
+            "value": "http://nginx/ask"
+          },
+          {
+            "key": "http.user_agent",
+            "type": "string",
+            "value": "python-requests/2.34.2"
+          },
+          {
+            "key": "net.host.port",
+            "type": "int64",
+            "value": 8000
+          },
+          {
+            "key": "net.peer.ip",
+            "type": "string",
+            "value": "172.18.0.6"
+          },
+          {
+            "key": "net.peer.port",
+            "type": "int64",
+            "value": 38300
+          },
+          {
+            "key": "span.kind",
+            "type": "string",
+            "value": "server"
+          },
+          {
+            "key": "otel.status_code",
+            "type": "string",
+            "value": "ERROR"
+          },
+          {
+            "key": "error",
+            "type": "bool",
+            "value": true
+          }
+        ],
+        "logs": [],
+        "processID": "p1",
+        "warnings": null
+      }
+    ],
+    "processes": {
+      "p1": {
+        "serviceName": "observable-agent",
+        "tags": [
+          {
+            "key": "agent.version",
+            "type": "string",
+            "value": "v2"
+          },
+          {
+            "key": "deployment.environment.name",
+            "type": "string",
+            "value": "lab"
+          },
+          {
+            "key": "service.instance.id",
+            "type": "string",
+            "value": "8f8cb8afe8de"
+          },
+          {
+            "key": "service.version",
+            "type": "string",
+            "value": "1.0.0"
+          },
+          {
+            "key": "telemetry.sdk.language",
+            "type": "string",
+            "value": "python"
+          },
+          {
+            "key": "telemetry.sdk.name",
+            "type": "string",
+            "value": "opentelemetry"
+          },
+          {
+            "key": "telemetry.sdk.version",
+            "type": "string",
+            "value": "1.45.2"
+          }
+        ]
+      }
+    },
+    "warnings": null
+  },
+  "slow_log": {
+    "ts": "2026-11-26T09:12:49.721379+00:00",
+    "level": "INFO",
+    "service": "observable-agent",
+    "instance": "00f3b35eea9a",
+    "event": "http_request",
+    "trace_id": "8018abb9d6006bec1359f9c667fbbd79",
+    "span_id": "d34cacd96c14e46a",
+    "request_id": "55d93dcc42c6",
+    "method": "POST",
+    "route": "/ask",
+    "status": 200,
+    "ms": 1717.5
+  },
+  "error_log": {
+    "ts": "2026-11-26T09:14:37.326886+00:00",
+    "level": "INFO",
+    "service": "observable-agent",
+    "instance": "8f8cb8afe8de",
+    "event": "http_request",
+    "trace_id": "d8f79e38e1fffc3ce1df6527734c15a2",
+    "span_id": "eb0b67952ebf5fbd",
+    "request_id": "f52f18392ba5",
+    "method": "POST",
+    "route": "/ask",
+    "status": 503,
+    "ms": 856.6
+  }
+}

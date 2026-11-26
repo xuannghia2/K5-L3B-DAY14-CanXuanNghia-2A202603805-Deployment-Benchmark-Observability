@@ -1,0 +1,17 @@
+
+════════════════════════════════════════════════════════
+  LOAD TEST REPORT — http://127.0.0.1:8002
+════════════════════════════════════════════════════════
+  Requests     : 300  (concurrency=10)
+  Duration     : 8.82 s
+  Throughput   : 34.03 req/s
+  Error rate   : 0.33%   {'200': 299, '503': 1}
+  Total cost   : $0.010296
+  Latency (ms) : min=132.2  avg=249.8  max=1716.9
+                 p50=195.6  p90=227.0  p95=245.5  p99=1703.3
+────────────────────────────────────────────────────────
+  SLO p95 ≤ 500ms        : ✅ PASS
+  SLO error rate ≤ 2.0%  : ✅ PASS
+════════════════════════════════════════════════════════
+
+💾 Đã lưu report: C:\Users\xuann\OneDrive\Documents\ChatGPT\Vin\K5-L3B-DAY14-CanXuanNghia-2A202603805-Deployment-Benchmark-Observability\reports\load_v2_c10.json

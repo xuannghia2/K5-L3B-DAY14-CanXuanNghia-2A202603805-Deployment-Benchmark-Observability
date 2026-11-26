@@ -1,0 +1,96 @@
+# HELP python_gc_objects_collected_total Objects collected during gc
+# TYPE python_gc_objects_collected_total counter
+python_gc_objects_collected_total{generation="0"} 3121.0
+python_gc_objects_collected_total{generation="1"} 4507.0
+python_gc_objects_collected_total{generation="2"} 24.0
+# HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC
+# TYPE python_gc_objects_uncollectable_total counter
+python_gc_objects_uncollectable_total{generation="0"} 0.0
+python_gc_objects_uncollectable_total{generation="1"} 0.0
+python_gc_objects_uncollectable_total{generation="2"} 0.0
+# HELP python_gc_collections_total Number of times this generation was collected
+# TYPE python_gc_collections_total counter
+python_gc_collections_total{generation="0"} 157.0
+python_gc_collections_total{generation="1"} 14.0
+python_gc_collections_total{generation="2"} 1.0
+# HELP python_info Python platform information
+# TYPE python_info gauge
+python_info{implementation="CPython",major="3",minor="11",patchlevel="18",version="3.11.18"} 1.0
+# HELP http_requests_total Tổng số HTTP request
+# TYPE http_requests_total counter
+http_requests_total{method="GET",route="/health",status="200"} 1.0
+http_requests_total{method="POST",route="/ask",status="200"} 24.0
+# HELP http_request_duration_seconds Thời gian xử lý HTTP request
+# TYPE http_request_duration_seconds histogram
+http_request_duration_seconds_bucket{le="0.05",method="GET",route="/health"} 1.0
+http_request_duration_seconds_bucket{le="0.1",method="GET",route="/health"} 1.0
+http_request_duration_seconds_bucket{le="0.2",method="GET",route="/health"} 1.0
+http_request_duration_seconds_bucket{le="0.3",method="GET",route="/health"} 1.0
+http_request_duration_seconds_bucket{le="0.5",method="GET",route="/health"} 1.0
+http_request_duration_seconds_bucket{le="0.75",method="GET",route="/health"} 1.0
+http_request_duration_seconds_bucket{le="1.0",method="GET",route="/health"} 1.0
+http_request_duration_seconds_bucket{le="1.5",method="GET",route="/health"} 1.0
+http_request_duration_seconds_bucket{le="2.0",method="GET",route="/health"} 1.0
+http_request_duration_seconds_bucket{le="3.0",method="GET",route="/health"} 1.0
+http_request_duration_seconds_bucket{le="5.0",method="GET",route="/health"} 1.0
+http_request_duration_seconds_bucket{le="+Inf",method="GET",route="/health"} 1.0
+http_request_duration_seconds_count{method="GET",route="/health"} 1.0
+http_request_duration_seconds_sum{method="GET",route="/health"} 0.0023956999993970385
+http_request_duration_seconds_bucket{le="0.05",method="POST",route="/ask"} 0.0
+http_request_duration_seconds_bucket{le="0.1",method="POST",route="/ask"} 0.0
+http_request_duration_seconds_bucket{le="0.2",method="POST",route="/ask"} 17.0
+http_request_duration_seconds_bucket{le="0.3",method="POST",route="/ask"} 24.0
+http_request_duration_seconds_bucket{le="0.5",method="POST",route="/ask"} 24.0
+http_request_duration_seconds_bucket{le="0.75",method="POST",route="/ask"} 24.0
+http_request_duration_seconds_bucket{le="1.0",method="POST",route="/ask"} 24.0
+http_request_duration_seconds_bucket{le="1.5",method="POST",route="/ask"} 24.0
+http_request_duration_seconds_bucket{le="2.0",method="POST",route="/ask"} 24.0
+http_request_duration_seconds_bucket{le="3.0",method="POST",route="/ask"} 24.0
+http_request_duration_seconds_bucket{le="5.0",method="POST",route="/ask"} 24.0
+http_request_duration_seconds_bucket{le="+Inf",method="POST",route="/ask"} 24.0
+http_request_duration_seconds_count{method="POST",route="/ask"} 24.0
+http_request_duration_seconds_sum{method="POST",route="/ask"} 4.631778500004657
+# HELP agent_in_flight_requests Số request đang xử lý
+# TYPE agent_in_flight_requests gauge
+agent_in_flight_requests 0.0
+# HELP llm_requests_total Số lần gọi LLM
+# TYPE llm_requests_total counter
+llm_requests_total{model="mock-llm-small",status="ok"} 24.0
+# HELP llm_request_duration_seconds Latency của LLM call
+# TYPE llm_request_duration_seconds histogram
+llm_request_duration_seconds_bucket{le="0.05",model="mock-llm-small"} 0.0
+llm_request_duration_seconds_bucket{le="0.1",model="mock-llm-small"} 0.0
+llm_request_duration_seconds_bucket{le="0.2",model="mock-llm-small"} 24.0
+llm_request_duration_seconds_bucket{le="0.3",model="mock-llm-small"} 24.0
+llm_request_duration_seconds_bucket{le="0.5",model="mock-llm-small"} 24.0
+llm_request_duration_seconds_bucket{le="0.75",model="mock-llm-small"} 24.0
+llm_request_duration_seconds_bucket{le="1.0",model="mock-llm-small"} 24.0
+llm_request_duration_seconds_bucket{le="1.5",model="mock-llm-small"} 24.0
+llm_request_duration_seconds_bucket{le="2.0",model="mock-llm-small"} 24.0
+llm_request_duration_seconds_bucket{le="3.0",model="mock-llm-small"} 24.0
+llm_request_duration_seconds_bucket{le="5.0",model="mock-llm-small"} 24.0
+llm_request_duration_seconds_bucket{le="+Inf",model="mock-llm-small"} 24.0
+llm_request_duration_seconds_count{model="mock-llm-small"} 24.0
+llm_request_duration_seconds_sum{model="mock-llm-small"} 3.8970984493418834
+# HELP llm_tokens_total Số token đã dùng
+# TYPE llm_tokens_total counter
+llm_tokens_total{model="mock-llm-small",type="input"} 1815.0
+llm_tokens_total{model="mock-llm-small",type="output"} 940.0
+# HELP llm_cost_usd_total Tổng chi phí LLM (USD)
+# TYPE llm_cost_usd_total counter
+llm_cost_usd_total{model="mock-llm-small"} 0.00083625
+# HELP agent_info Thông tin phiên bản agent (luôn = 1)
+# TYPE agent_info gauge
+agent_info{model="mock-llm-small",version="v2"} 1.0
+# HELP agent_question_length_chars Question length in characters
+# TYPE agent_question_length_chars histogram
+agent_question_length_chars_bucket{le="20.0"} 2.0
+agent_question_length_chars_bucket{le="50.0"} 17.0
+agent_question_length_chars_bucket{le="100.0"} 24.0
+agent_question_length_chars_bucket{le="200.0"} 24.0
+agent_question_length_chars_bucket{le="500.0"} 24.0
+agent_question_length_chars_bucket{le="1000.0"} 24.0
+agent_question_length_chars_bucket{le="2000.0"} 24.0
+agent_question_length_chars_bucket{le="+Inf"} 24.0
+agent_question_length_chars_count 24.0
+agent_question_length_chars_sum 1085.0
