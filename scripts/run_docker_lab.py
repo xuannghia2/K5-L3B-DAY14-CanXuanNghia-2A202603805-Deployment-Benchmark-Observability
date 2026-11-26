@@ -48,7 +48,7 @@ def query(expr):
     return data["data"]["result"]
 
 def main():
-    if "--chaos-only" not in sys.argv:
+    if not ({"--chaos-only", "--scale-only"} & set(sys.argv)):
         # CP2: images, real container HTTP and Compose through Nginx.
         for version,path in (("develop","develop"),("advanced","production")):
             run(["docker","build","-f",f"02-docker/{path}/Dockerfile","-t",f"my-agent:{version}","."],
@@ -98,16 +98,21 @@ def main():
                 if count==3:
                     compose(OBS,project,"up","-d","--scale","agent=3")
                     time.sleep(15) # DNS discovery of new instances.
-                compose(OBS,project,"run","--rm","locust","-f","/mnt/locust/locustfile.py","--host","http://nginx",
+                containers=compose(OBS,project,"ps","-q","agent").stdout.splitlines()
+                assert len(containers)==count, (count, containers)
+                (REPORTS/f"scale_{count}_instances.json").write_text(json.dumps({"expected":count,"actual":len(containers),"container_ids":containers},indent=2))
+                compose(OBS,project,"run","--rm","--no-deps","locust","-f","/mnt/locust/locustfile.py","--host","http://nginx",
                         "--headless","-u","100","-r","10","-t","2m","--csv",f"/mnt/results/scale_{count}",
                         name=f"locust-scale-{count}",check=False)
                 src=OBS/f"benchmark-results/scale_{count}_stats.csv"
                 assert src.exists(), f"Missing {src}"
                 (CSV/src.name).write_bytes(src.read_bytes())
+        if "--scale-only" in sys.argv:
+            return
         env={**os.environ,"MOCK_ERROR_RATE":"0.2","MOCK_SLOW_RATE":"0.3"}
         chaos_start=time.time()
         compose(OBS,project,"up","-d","--force-recreate","--scale","agent=3","agent",env=env)
-        load=subprocess.Popen(["docker","compose","-p",project,"run","--rm","locust",
+        load=subprocess.Popen(["docker","compose","-p",project,"run","--rm","--no-deps","locust",
             "-f","/mnt/locust/locustfile.py","--host","http://nginx","--headless","-u","100","-r","10","-t","6m"],
             cwd=OBS,env=env,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
         try:
