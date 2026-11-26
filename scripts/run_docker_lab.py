@@ -48,41 +48,42 @@ def query(expr):
     return data["data"]["result"]
 
 def main():
-    # CP2: images, real container HTTP and Compose through Nginx.
-    for version,path in (("develop","develop"),("advanced","production")):
-        run(["docker","build","-f",f"02-docker/{path}/Dockerfile","-t",f"my-agent:{version}","."],
-            name=f"docker-build-{version}")
-    sizes={v:int(run(["docker","image","inspect",f"my-agent:{v}","--format","{{.Size}}"]).stdout)
-           for v in ("develop","advanced")}
-    sizes["reduction_percent"]=(sizes["develop"]-sizes["advanced"])/sizes["develop"]*100
-    (REPORTS/"docker-image-sizes.json").write_text(json.dumps(sizes,indent=2))
-    run(["docker","run","-d","--name","day14-basic","-p","8000:8000","my-agent:develop"])
-    try:
-        wait("http://localhost:8000/openapi.json")
-        resp=httpx.post("http://localhost:8000/ask",params={"question":"What is Docker?"})
-        (REPORTS/"docker-basic-http.txt").write_text(f"HTTP {resp.status_code}\n{resp.text}")
-        resp.raise_for_status()
-    finally:
-        run(["docker","rm","-f","day14-basic"],check=False)
-    folder=ROOT/"02-docker/production"
-    (folder/".env.local").touch()
-    try:
-        compose(folder,"k5-day14-docker","up","-d","--build",name="part2-compose")
-        wait("http://localhost/health")
-        resp=httpx.post("http://localhost/ask",json={"question":"Explain microservices"})
-        (REPORTS/"part2-nginx.txt").write_text(f"HTTP {resp.status_code}\n{resp.text}")
-        resp.raise_for_status()
-    finally:
-        compose(folder,"k5-day14-docker","logs",name="part2-stack-logs",check=False)
-        compose(folder,"k5-day14-docker","down","-v",check=False)
-    folder=ROOT/"05-scaling-reliability/production"
-    (folder/".env.local").touch()
-    try:
-        compose(folder,"k5-day14-scaling","up","-d","--build","--scale","agent=3")
-        wait("http://localhost:8080/health")
-        run([sys.executable,"test_stateless.py"],cwd=folder,name="part5-stateless")
-    finally:
-        compose(folder,"k5-day14-scaling","down","-v",check=False)
+    if "--chaos-only" not in sys.argv:
+        # CP2: images, real container HTTP and Compose through Nginx.
+        for version,path in (("develop","develop"),("advanced","production")):
+            run(["docker","build","-f",f"02-docker/{path}/Dockerfile","-t",f"my-agent:{version}","."],
+                name=f"docker-build-{version}")
+        sizes={v:int(run(["docker","image","inspect",f"my-agent:{v}","--format","{{.Size}}"]).stdout)
+               for v in ("develop","advanced")}
+        sizes["reduction_percent"]=(sizes["develop"]-sizes["advanced"])/sizes["develop"]*100
+        (REPORTS/"docker-image-sizes.json").write_text(json.dumps(sizes,indent=2))
+        run(["docker","run","-d","--name","day14-basic","-p","8000:8000","my-agent:develop"])
+        try:
+            wait("http://localhost:8000/openapi.json")
+            resp=httpx.post("http://localhost:8000/ask",params={"question":"What is Docker?"})
+            (REPORTS/"docker-basic-http.txt").write_text(f"HTTP {resp.status_code}\n{resp.text}")
+            resp.raise_for_status()
+        finally:
+            run(["docker","rm","-f","day14-basic"],check=False)
+        folder=ROOT/"02-docker/production"
+        (folder/".env.local").touch()
+        try:
+            compose(folder,"k5-day14-docker","up","-d","--build",name="part2-compose")
+            wait("http://localhost/health")
+            resp=httpx.post("http://localhost/ask",json={"question":"Explain microservices"})
+            (REPORTS/"part2-nginx.txt").write_text(f"HTTP {resp.status_code}\n{resp.text}")
+            resp.raise_for_status()
+        finally:
+            compose(folder,"k5-day14-docker","logs",name="part2-stack-logs",check=False)
+            compose(folder,"k5-day14-docker","down","-v",check=False)
+        folder=ROOT/"05-scaling-reliability/production"
+        (folder/".env.local").touch()
+        try:
+            compose(folder,"k5-day14-scaling","up","-d","--build","--scale","agent=3")
+            wait("http://localhost:8080/health")
+            run([sys.executable,"test_stateless.py"],cwd=folder,name="part5-stateless")
+        finally:
+            compose(folder,"k5-day14-scaling","down","-v",check=False)
     # CP8: default-load scale benchmark, then two simultaneous chaos alerts.
     project="k5-day14-observability"
     try:
@@ -92,22 +93,23 @@ def main():
         wait("http://localhost:9090/-/ready")
         run(["docker","run","--rm","-v",str(OBS/"prometheus")+":/p","--entrypoint","promtool",
              "prom/prometheus:v3.16.0","test","rules","/p/alert_rules_test.yml"],name="alert-rule-tests")
-        for count in (1,3):
-            if count==3:
-                compose(OBS,project,"up","-d","--scale","agent=3")
-                time.sleep(15) # DNS discovery of new instances.
-            compose(OBS,project,"run","--rm","locust","-f","/mnt/locust/locustfile.py","--host","http://nginx",
-                    "--headless","-u","100","-r","10","-t","2m","--csv",f"/mnt/results/scale_{count}",
-                    name=f"locust-scale-{count}",check=False)
-            src=OBS/f"benchmark-results/scale_{count}_stats.csv"
-            assert src.exists(), f"Missing {src}"
-            (CSV/src.name).write_bytes(src.read_bytes())
+        if "--chaos-only" not in sys.argv:
+            for count in (1,3):
+                if count==3:
+                    compose(OBS,project,"up","-d","--scale","agent=3")
+                    time.sleep(15) # DNS discovery of new instances.
+                compose(OBS,project,"run","--rm","locust","-f","/mnt/locust/locustfile.py","--host","http://nginx",
+                        "--headless","-u","100","-r","10","-t","2m","--csv",f"/mnt/results/scale_{count}",
+                        name=f"locust-scale-{count}",check=False)
+                src=OBS/f"benchmark-results/scale_{count}_stats.csv"
+                assert src.exists(), f"Missing {src}"
+                (CSV/src.name).write_bytes(src.read_bytes())
         env={**os.environ,"MOCK_ERROR_RATE":"0.2","MOCK_SLOW_RATE":"0.3"}
         chaos_start=time.time()
         compose(OBS,project,"up","-d","--force-recreate","--scale","agent=3","agent",env=env)
         load=subprocess.Popen(["docker","compose","-p",project,"run","--rm","locust",
             "-f","/mnt/locust/locustfile.py","--host","http://nginx","--headless","-u","100","-r","10","-t","6m"],
-            cwd=OBS,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+            cwd=OBS,env=env,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
         try:
             first={}
             samples=[]

@@ -60,7 +60,7 @@ jobs:
       - run: pip install httpx playwright
       - run: playwright install --with-deps chromium
       - name: Docker exercises and observability experiments
-        run: python scripts/run_docker_lab.py
+        run: python scripts/run_docker_lab.py --chaos-only
       - name: Save measured evidence
         if: always()
         uses: actions/upload-artifact@v4
